@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTINF:0, BigBuckBunny - BigBuckBunny
-https://rovideo.xyz/174/tt1745960.720p.tr.m3u8
-#EXTINF:0,ElephantsDream - ElephantsDream
+#EXTINF:123, BigBuckBunny - BigBuckBunny
+http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
+#EXTINF:321,ElephantsDream - ElephantsDream
 http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4
