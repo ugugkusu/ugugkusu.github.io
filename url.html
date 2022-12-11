@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="refresh" />
 <title></title>
 </head>
 <script type="module">
+const meta = document.querySelector("meta");
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getFirestore,collection, doc, getDoc} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
 
@@ -29,7 +32,8 @@ import { getFirestore,collection, doc, getDoc} from 'https://www.gstatic.com/fir
   	const aa = JSON.stringify(docSnap.data().url);
   	const aaa = JSON.parse(aa);
   //	alert(aa);
-  window.location.href = aaa;
+ // window.location.href = aaa;
+ meta.setAttribute("content","0;url=" + aaa);
   } else {
   // doc.data() will be undefined in this case
   console.log("No such document!");
