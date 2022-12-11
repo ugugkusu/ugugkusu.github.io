@@ -29,7 +29,7 @@ import { getFirestore,collection, doc, getDoc} from 'https://www.gstatic.com/fir
   	const aa = JSON.stringify(docSnap.data().url);
   	const aaa = JSON.parse(aa);
   //	alert(aa);
-  window.location.replace(aaa);
+  window.location.href = aaa;
   } else {
   // doc.data() will be undefined in this case
   console.log("No such document!");
