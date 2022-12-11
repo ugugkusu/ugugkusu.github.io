@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<script type="module">
+const inp = document.querySelector("input");
+const btn = document.querySelector("button");
+const pre = document.querySelector("pre");
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { getFirestore,collection, doc, getDoc,setDoc,updateDoc} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAGCnvkywNXhCg_yhi17ukxHn_472Us5PA",
+    authDomain: "personal-tv-app.firebaseapp.com",
+    projectId: "personal-tv-app",
+    storageBucket: "personal-tv-app.appspot.com",
+    messagingSenderId: "48515580656",
+    appId: "1:48515580656:web:7d55b65d3d05c556a93835"
+  };
+
+ 
+  const app = initializeApp(firebaseConfig);
+  const firestore = getFirestore();
+  
+  const urlRef = collection(firestore, "url");
+  const docRef = doc(firestore, "url", "media-url");
+  const docSnap = await getDoc(docRef);
+console.log(`${JSON.stringify(docSnap.data().url)}`)
+ 
+  btn.addEventListener("click",()=>{
+ 	setDoc(doc(urlRef, "media-url"), {
+ 	url: inp.value
+ 	});
+  })
+
+  
+</script>
+<body>
+<div class="container">
+	<input placeholder="YouTube Video URL">
+	<button id="btn">M3U Dosyasını Güncelle</button>
+	<pre>
+	
+	</pre>
+</div>
+<style type="text/css">
+* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+	box-sizing:border-box;
+}
+.container {
+	display:flex;
+	flex-direction:column;
+	gap:16px;
+	margin:16px;
+}
+input {
+	padding:18px 36px 18px 16px;
+	width:100%;
+	border-radius:8px;
+	font-size:16px;
+	border-radius:8px;
+	border:1px solid #ccc;
+}
+button {
+	padding:18px 36px 18px 16px;
+	width:100%;
+	border-radius:8px;
+	font-size:16px;
+	border-radius:8px;
+	border:0px;
+	background:#1e88e5;
+	color:#fff;
+	font-weight:500;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+</style>
+<script type="text/javascript">
+
+
+</script>
+</body>
+</html>
